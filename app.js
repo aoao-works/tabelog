@@ -6,10 +6,9 @@ let infoWindow = null;
 
 // GitHub設定 (実装時に自分のリポジトリ情報に書き換えてください)
 const GITHUB_CONFIG = {
-    owner: 'YOUR_USERNAME',
-    repo: 'YOUR_REPO_NAME',
-    path: 'data.json',
-    token: 'YOUR_PERSONAL_ACCESS_TOKEN' // ※本番環境ではセキュリティ上、バックエンドを介すのが理想です
+    owner: 'aoao-works',
+    repo: 'tabelog',
+    path: 'data.json'
 };
 
 // 1. Google Map 初期化
@@ -20,6 +19,20 @@ function initMap() {
         center: itlCampus,
     });
     infoWindow = new google.maps.InfoWindow();
+
+    draftMarker = new google.maps.Marker({
+        position: itlCampus,
+        map: map,
+        title: "中央大学国際情報学部（iTL）",
+        icon: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+    });
+
+    draftMarker = new google.maps.Marker({
+        position: lCampus,
+        map: map,
+        title: "中央大学国際情報学部（iTL）",
+        icon: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+    });
 
     // 【追加】地図をクリックした時にピンを立てる処理
     map.addListener("click", (event) => {
@@ -40,6 +53,25 @@ function initMap() {
     loadData();
 }
 
+// 2. データの読み込み (GitHub上のdata.jsonを取得)
+// app.js の 22行目付近を修正
+async function loadData() {
+    try {
+        const response = await fetch(
+            `https://raw.githubusercontent.com/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/main/${GITHUB_CONFIG.path}`
+        );
+
+        if (!response.ok) {
+            throw new Error(`HTTPエラー: ${response.status}`);
+        }
+
+        restaurantData = await response.json();
+        renderRestaurants(restaurantData);
+    } catch (error) {
+        console.error("データ取得失敗:", error);
+    }
+}
+
 function normalizeRestaurant(res) {
     return {
         ...res,
@@ -47,24 +79,6 @@ function normalizeRestaurant(res) {
         lat: Number(res.lat),
         lng: Number(res.lng)
     };
-}
-
-// 2. データの読み込み (GitHub上のdata.jsonを取得)
-// app.js の 22行目付近を修正
-async function loadData() {
-    try {
-        // GitHubのURLではなく、同じフォルダにある data.json を読み込むように変更
-        const response = await fetch('./data.json'); 
-        
-        if (!response.ok) {
-            throw new Error(`HTTPエラー: ${response.status}`);
-        }
-        
-        restaurantData = await response.json();
-        renderRestaurants(restaurantData);
-    } catch (error) {
-        console.error("データ取得失敗:", error);
-    }
 }
 
 // 3. リストとマーカーの描画
