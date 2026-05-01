@@ -20,45 +20,47 @@
 
         <div class="container">
             <section id="filter-section">
-                <select id="genre-filter">
-                    <option value="all">全ジャンル</option>
-                    <option value="ramen">ラーメン</option>
-                    <option value="izakaya">居酒屋</option>
-                    <option value="cafe">カフェ</option>
-                    <option value="chinese">中華</option>
-                    <option value="italian">イタリアン</option>
-                    <option value="other">その他</option>
-                </select>
-                <label>
-                    <input type="checkbox" id="within-50-only"> 50分以内のみ表示
-                </label>
+                <div style="margin-bottom: 12px;">
+                    <input type="text" id="search-input" placeholder="店名で検索..."
+                        style="width: 100%; padding: 10px; box-sizing: border-box; margin-bottom: 10px;">
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+                    <select id="genre-filter">
+                        <option value="all">全ジャンル</option>
+                        <option value="ramen">ラーメン</option>
+                        <option value="izakaya">居酒屋</option>
+                        <option value="cafe">カフェ</option>
+                        <option value="chinese">中華</option>
+                        <option value="italian">イタリアン</option>
+                        <option value="other">その他</option>
+                    </select>
+                    <select id="sort-select">
+                        <option value="default">並び順（デフォルト）</option>
+                        <option value="time-asc">時間が短い順</option>
+                        <option value="time-desc">時間が長い順</option>
+                        <option value="price-asc">価格が安い順</option>
+                        <option value="price-desc">価格が高い順</option>
+                        <option value="walking-asc">歩く時間が短い順</option>
+                    </select>
+                </div>
+                <div style="display: flex; gap: 10px; margin-bottom: 12px;">
+                    <label style="flex: 1; display: flex; align-items: center;">
+                        <input type="checkbox" id="within-50-only"> 50分以内のみ表示
+                    </label>
+                    <button type="button" id="random-btn"
+                        style="padding: 10px 15px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">🎲
+                        今日のお店</button>
+                    <button type="button" id="reset-btn"
+                        style="padding: 10px 15px; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">リセット</button>
+                </div>
+                <div id="result-count" style="font-size: 0.9rem; color: #666; text-align: right;">
+                </div>
             </section>
 
             <section id="restaurant-list">
             </section>
 
-            <hr>
-            <section id="submission-form">
-                <h3>レストラン情報の追加</h3>
-                <form id="restaurant-form">
-                    <input type="text" id="name" placeholder="店名" required>
-
-                    <p>ジャンル（複数選択可）:</p>
-                    <div id="genre-checkbox-group" class="checkbox-container">
-                        <label><input type="checkbox" name="genre" value="ramen"> ラーメン</label>
-                        <label><input type="checkbox" name="genre" value="izakaya"> 居酒屋</label>
-                        <label><input type="checkbox" name="genre" value="cafe"> カフェ</label>
-                        <label><input type="checkbox" name="genre" value="chinese"> 中華</label>
-                        <label><input type="checkbox" name="genre" value="italian"> イタリアン</label>
-                        <label><input type="checkbox" name="genre" value="other"> その他</label>
-                    </div>
-
-                    <label class="toggle-container">
-                        <input type="checkbox" id="is_within_50"> 50分以内で食事が完結するか？
-                    </label>
-                    <button type="submit" id="submit-btn">GitHubへ送信</button>
-                </form>
-            </section>
+            
         </div>
     </main>
 

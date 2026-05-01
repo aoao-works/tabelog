@@ -8,7 +8,7 @@
 
 body {
     font-family: sans-serif;
-    margin: 0;
+    margin: 10px;
     background-color: var(--main-bg);
 }
 
@@ -30,9 +30,25 @@ body {
     border-radius: 4px;
     padding: 15px;
     margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 220px 120px;
+    gap: 20px;
     align-items: center;
+}
+
+.restaurant-card>div:first-child {
+    min-width: 0;
+    word-break: break-word;
+}
+
+.restaurant-card .time-badge {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.restaurant-card>div:last-child {
+    text-align: right;
+    white-space: nowrap;
 }
 
 .time-badge {
@@ -42,10 +58,19 @@ body {
     font-weight: bold;
 }
 
-.badge-ok { background: #e6ffed; color: var(--accent-ok); }
-.badge-ng { background: #ffeef0; color: var(--accent-ng); }
+.badge-ok {
+    background: #e6ffed;
+    color: var(--accent-ok);
+}
 
-form input, form select, form button {
+.badge-ng {
+    background: #ffeef0;
+    color: var(--accent-ng);
+}
+
+form input,
+form select,
+form button {
     display: block;
     width: 100%;
     margin-bottom: 10px;
@@ -77,4 +102,120 @@ form input, form select, form button {
     width: auto;
     margin-right: 6px;
     margin-bottom: 0;
+}
+
+/* toggle-container 用のスタイル（フォームの幅指定に影響されないようにする） */
+.toggle-container {
+    margin-bottom: 12px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-container .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.toggle-container input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+/* スマートフォン対応 */
+@media (max-width: 768px) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        margin: 10px;
+    }
+
+    #map {
+        height: 250px;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .restaurant-card {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 12px;
+        margin-bottom: 8px;
+    }
+
+    .restaurant-card>div:first-child {
+        font-size: 0.95rem;
+    }
+
+    .restaurant-card .time-badge {
+        font-size: 0.85rem;
+        padding: 6px 8px;
+    }
+
+    .restaurant-card>div:last-child {
+        text-align: left;
+        font-size: 0.85rem;
+    }
+
+    /* フィルターセクションの調整 */
+    #filter-section>div:nth-child(2) {
+        grid-template-columns: 1fr;
+    }
+
+    /* ボタンの配置を縦にする */
+    #filter-section>div:nth-child(3) {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    #filter-section>div:nth-child(3) label {
+        flex: 1;
+    }
+
+    #filter-section>div:nth-child(3) button {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    form input,
+    form select,
+    form button {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .checkbox-container {
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .checkbox-container label {
+        font-size: 0.9rem;
+    }
+
+    .toggle-container {
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+
+    .toggle-container .checkbox-label {
+        font-size: 0.9rem;
+    }
 }
