@@ -3,6 +3,7 @@ let markers = [];
 let restaurantData = [];
 let draftMarker = null;
 let infoWindow = null;
+let currentFilteredData = [];
 
 // GitHub設定 (実装時に自分のリポジトリ情報に書き換えてください)
 const GITHUB_CONFIG = {
@@ -44,6 +45,9 @@ function initMap() {
 
     // データの読み込み
     loadData();
+
+    // フィルター機能の初期化
+    initializeFilters();
 }
 
 // 2. データの読み込み (ローカルまたはGitHub上のdata.jsonを取得)
@@ -56,19 +60,61 @@ async function loadData() {
         }
 
         restaurantData = await response.json();
-        renderRestaurants(restaurantData);
+        applyFilters();
     } catch (error) {
         console.error("データ取得失敗:", error);
     }
 }
 
 function normalizeRestaurant(res) {
+    const walkingRoundTrip = (Number(res.walking_minutes_one_way) || 0) * 2;
+    const eatingTime = Number(res.eating_minutes) || 30;
+    const totalTime = walkingRoundTrip + eatingTime;
+
     return {
         ...res,
         genres: Array.isArray(res.genres) ? res.genres : (res.genre ? [res.genre] : []),
         lat: Number(res.lat),
-        lng: Number(res.lng)
+        lng: Number(res.lng),
+        walking_minutes_one_way: Number(res.walking_minutes_one_way) || 0,
+        eating_minutes: eatingTime,
+        walking_minutes_round_trip: walkingRoundTrip,
+        total_time_minutes: totalTime
     };
+}
+
+// フィルター処理
+function applyFilters() {
+    const selectedGenre = document.getElementById('genre-filter').value;
+    const within50Only = document.getElementById('within-50-only').checked;
+
+    currentFilteredData = restaurantData
+        .map(normalizeRestaurant)
+        .filter(res => {
+            // ジャンルでフィルタ
+            if (selectedGenre !== 'all' && !res.genres.includes(selectedGenre)) {
+                return false;
+            }
+            // 50分以内でフィルタ
+            if (within50Only && res.total_time_minutes > 50) {
+                return false;
+            }
+            return true;
+        });
+
+    renderRestaurants(currentFilteredData);
+}
+
+// フィルター機能の初期化
+function initializeFilters() {
+    const genreFilter = document.getElementById('genre-filter');
+    const within50Checkbox = document.getElementById('within-50-only');
+
+    genreFilter.addEventListener('change', applyFilters);
+    within50Checkbox.addEventListener('change', applyFilters);
+
+    // 初回表示
+    applyFilters();
 }
 
 // 3. リストとマーカーの描画
@@ -91,8 +137,11 @@ function renderRestaurants(data) {
             <div>
                 <strong>${res.name}</strong> [${res.genres.join(', ')}]
             </div>
-            <div class="time-badge ${res.is_within_50 ? 'badge-ok' : 'badge-ng'}">
-                ${res.is_within_50 ? '50分以内 OK' : '50分超過'}
+            <div class="time-badge ${res.total_time_minutes <= 50 ? 'badge-ok' : 'badge-ng'}">
+                往復${res.walking_minutes_round_trip}分 + 食事${res.eating_minutes}分 = ${res.total_time_minutes}分
+            </div>
+            <div style="font-size: 0.9rem; color: #666;">
+                価格: ${res.price ? res.price + '円' : '未定'}
             </div>
         `;
             list.appendChild(card);
@@ -106,10 +155,11 @@ function renderRestaurants(data) {
 
             marker.addListener('click', () => {
                 infoWindow.setContent(`
-                <div style="min-width: 180px;">
+                <div style="min-width: 200px;">
                     <strong>${res.name}</strong><br>
                     ${res.genres.join(', ')}<br>
-                    ${res.is_within_50 ? '50分以内 OK' : '50分超過'}
+                    往復${res.walking_minutes_round_trip}分 + 食事${res.eating_minutes}分 = ${res.total_time_minutes}分<br>
+                    価格: ${res.price ? res.price + '円' : '未定'}
                 </div>
             `);
                 infoWindow.open(map, marker);
@@ -148,7 +198,8 @@ document.getElementById('restaurant-form').addEventListener('submit', async (e) 
     const newEntry = {
         name: document.getElementById('name').value,
         genres: selectedGenres,
-        is_within_50: document.getElementById('is_within_50').checked,
+        walking_minutes_one_way: 5,
+        eating_minutes: 30,
         lat: draftMarker.getPosition().lat(),
         lng: draftMarker.getPosition().lng()
     };

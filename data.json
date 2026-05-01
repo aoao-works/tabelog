@@ -6,17 +6,21 @@
             "french"
         ],
         "lat": 35.6952,
-        "lng": 139.7384,
-        "is_within_50": true
+        "lng": 139.7231896,
+        "walking_minutes_one_way": 8,
+        "eating_minutes": 50,
+        "price": null
     },
     {
         "name": "古民家ビストロ 燕食堂 市ヶ谷",
         "genres": [
             "french"
         ],
-        "lat": 35.6945,
+        "lat": 35.6905154,
         "lng": 139.7372,
-        "is_within_50": true
+        "walking_minutes_one_way": 9,
+        "eating_minutes": 55,
+        "price": 2000
     },
     {
         "name": "サルビア",
@@ -25,7 +29,9 @@
         ],
         "lat": 35.6938,
         "lng": 139.7366,
-        "is_within_50": true
+        "walking_minutes_one_way": 2,
+        "eating_minutes": 45,
+        "price": null
     },
     {
         "name": "PAL めがね食堂 イタリアン 市ヶ谷",
@@ -34,7 +40,9 @@
         ],
         "lat": 35.6958,
         "lng": 139.7390,
-        "is_within_50": true
+        "walking_minutes_one_way": 10,
+        "eating_minutes": 40,
+        "price": null
     },
     {
         "name": "市ヶ谷 GRATO（グラート）",
@@ -43,7 +51,9 @@
         ],
         "lat": 35.6940,
         "lng": 139.7375,
-        "is_within_50": true
+        "walking_minutes_one_way": 4,
+        "eating_minutes": 45,
+        "price": null
     },
     {
         "name": "麺や庄の",
@@ -52,7 +62,9 @@
         ],
         "lat": 35.6932,
         "lng": 139.7358,
-        "is_within_50": true
+        "walking_minutes_one_way": 6,
+        "eating_minutes": 20,
+        "price": null
     },
     {
         "name": "用心棒 市ヶ谷飯田橋",
@@ -61,7 +73,9 @@
         ],
         "lat": 35.6928,
         "lng": 139.7355,
-        "is_within_50": false
+        "walking_minutes_one_way": 55,
+        "eating_minutes": 25,
+        "price": null
     },
     {
         "name": "横浜家系ラーメン てつ家 市ヶ谷",
@@ -70,7 +84,9 @@
         ],
         "lat": 35.6955,
         "lng": 139.7388,
-        "is_within_50": true
+        "walking_minutes_one_way": 9,
+        "eating_minutes": 20,
+        "price": null
     },
     {
         "name": "炭火焼濃厚中華そば 倫道",
@@ -80,7 +96,8 @@
         ],
         "lat": 35.6948,
         "lng": 139.7380,
-        "is_within_50": true
+        "walking_minutes_one_way": 7,
+        "eating_minutes": 25
     },
     {
         "name": "ハレ＆ケ",
@@ -89,7 +106,9 @@
         ],
         "lat": 35.6942,
         "lng": 139.7368,
-        "is_within_50": true
+        "walking_minutes_one_way": 4,
+        "eating_minutes": 20,
+        "price": null
     },
     {
         "name": "炭火焼干物定食しんぱち食堂 市ヶ谷店",
@@ -98,7 +117,9 @@
         ],
         "lat": 35.6935,
         "lng": 139.7362,
-        "is_within_50": true
+        "walking_minutes_one_way": 3,
+        "eating_minutes": 25,
+        "price": null
     },
     {
         "name": "肴と酒 晴々 市ヶ谷本店",
@@ -107,7 +128,9 @@
         ],
         "lat": 35.6950,
         "lng": 139.7385,
-        "is_within_50": false
+        "walking_minutes_one_way": 8,
+        "eating_minutes": 60,
+        "price": null
     },
     {
         "name": "九州酒場 げん次",
@@ -116,7 +139,9 @@
         ],
         "lat": 35.6943,
         "lng": 139.7370,
-        "is_within_50": false
+        "walking_minutes_one_way": 5,
+        "eating_minutes": 50,
+        "price": null
     },
     {
         "name": "大海の食卓 市ヶ谷",
@@ -125,7 +150,9 @@
         ],
         "lat": 35.6955,
         "lng": 139.7392,
-        "is_within_50": true
+        "walking_minutes_one_way": 10,
+        "eating_minutes": 60,
+        "price": null
     },
     {
         "name": "さかじ総本店 市ヶ谷",
@@ -134,7 +161,8 @@
         ],
         "lat": 35.6940,
         "lng": 139.7373,
-        "is_within_50": true
+        "walking_minutes_one_way": 4,
+        "eating_minutes": 45
     },
     {
         "name": "居酒屋とりせん 市ヶ谷店",
@@ -143,7 +171,9 @@
         ],
         "lat": 35.6945,
         "lng": 139.7378,
-        "is_within_50": false
+        "walking_minutes_one_way": 52,
+        "eating_minutes": 50,
+        "price": null
     },
     {
         "name": "PASSAGE COFFEE ICHIGAYA",
@@ -152,7 +182,9 @@
         ],
         "lat": 35.6960,
         "lng": 139.7395,
-        "is_within_50": true
+        "walking_minutes_one_way": 11,
+        "eating_minutes": 20,
+        "price": null
     },
     {
         "name": "つながるCafe",
@@ -161,7 +193,9 @@
         ],
         "lat": 35.6946,
         "lng": 139.7376,
-        "is_within_50": true
+        "walking_minutes_one_way": 5,
+        "eating_minutes": 25,
+        "price": null
     },
     {
         "name": "問いカフェ",
@@ -170,7 +204,9 @@
         ],
         "lat": 35.6938,
         "lng": 139.7365,
-        "is_within_50": true
+        "walking_minutes_one_way": 1,
+        "eating_minutes": 20,
+        "price": null
     },
     {
         "name": "Servo Coffee Ichigaya",
@@ -179,7 +215,9 @@
         ],
         "lat": 35.6952,
         "lng": 139.7382,
-        "is_within_50": true
+        "walking_minutes_one_way": 7,
+        "eating_minutes": 25,
+        "price": null
     },
     {
         "name": "選書専門書店 チャイと選書 Chapters bookstore",
@@ -188,6 +226,31 @@
         ],
         "lat": 35.6941,
         "lng": 139.7369,
-        "is_within_50": true
+        "walking_minutes_one_way": 3,
+        "eating_minutes": 30,
+        "price": null
+    },
+    {
+        "name": "PASSAGE COFFEE ICHIGAYA",
+        "genres": [
+            "cafe",
+            "coffee"
+        ],
+        "lat": 35.6941,
+        "lng": 139.7369,
+        "walking_minutes_one_way": 3,
+        "eating_minutes": 30,
+        "price": null
     }
-]
+]    {
+        "name": "",
+        "genres": [
+            "",
+            ""
+        ],
+        "lat": 35.6941,
+        "lng": 139.7369,
+        "walking_minutes_one_way": 3,
+        "eating_minutes": 30,
+        "price": null
+    }
