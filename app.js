@@ -34,15 +34,14 @@ function initMap() {
     map.addListener("click", (event) => {
         // すでにピンがあれば位置を移動、なければ新しく作成
         if (draftMarker) {
-            draftMarker.setPosition(event.latLng);
-        } else {
-            draftMarker = new google.maps.Marker({
-                position: event.latLng,
-                map: map,
-                title: "新規追加するお店の位置",
-                icon: "http://maps.google.com/mapfiles/ms/icons/green-dot.png" // 既存の赤ピンと区別するために緑色に設定
-            });
+            return;
         }
+        draftMarker = new google.maps.Marker({
+            position: event.latLng,
+            map: map,
+            title: "新規追加するお店の位置",
+            icon: "http://maps.google.com/mapfiles/ms/icons/green-dot.png" // 既存の赤ピンと区別するために緑色に設定
+        });
     });
 
     // データの読み込み
