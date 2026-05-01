@@ -27,13 +27,6 @@ function initMap() {
         icon: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
     });
 
-    draftMarker = new google.maps.Marker({
-        position: lCampus,
-        map: map,
-        title: "中央大学国際情報学部（iTL）",
-        icon: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
-    });
-
     // 【追加】地図をクリックした時にピンを立てる処理
     map.addListener("click", (event) => {
         // すでにピンがあれば位置を移動、なければ新しく作成
@@ -53,13 +46,10 @@ function initMap() {
     loadData();
 }
 
-// 2. データの読み込み (GitHub上のdata.jsonを取得)
-// app.js の 22行目付近を修正
+// 2. データの読み込み (ローカルまたはGitHub上のdata.jsonを取得)
 async function loadData() {
     try {
-        const response = await fetch(
-            `https://raw.githubusercontent.com/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/main/${GITHUB_CONFIG.path}`
-        );
+        const response = await fetch('./data.json');
 
         if (!response.ok) {
             throw new Error(`HTTPエラー: ${response.status}`);

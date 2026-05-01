@@ -1,0 +1,193 @@
+[
+    {
+        "name": "casper（キャスパー）",
+        "genres": [
+            "italian",
+            "french"
+        ],
+        "lat": 35.6952,
+        "lng": 139.7384,
+        "is_within_50": true
+    },
+    {
+        "name": "古民家ビストロ 燕食堂 市ヶ谷",
+        "genres": [
+            "french"
+        ],
+        "lat": 35.6945,
+        "lng": 139.7372,
+        "is_within_50": true
+    },
+    {
+        "name": "サルビア",
+        "genres": [
+            "italian"
+        ],
+        "lat": 35.6938,
+        "lng": 139.7366,
+        "is_within_50": true
+    },
+    {
+        "name": "PAL めがね食堂 イタリアン 市ヶ谷",
+        "genres": [
+            "italian"
+        ],
+        "lat": 35.6958,
+        "lng": 139.7390,
+        "is_within_50": true
+    },
+    {
+        "name": "市ヶ谷 GRATO（グラート）",
+        "genres": [
+            "italian"
+        ],
+        "lat": 35.6940,
+        "lng": 139.7375,
+        "is_within_50": true
+    },
+    {
+        "name": "麺や庄の",
+        "genres": [
+            "ramen"
+        ],
+        "lat": 35.6932,
+        "lng": 139.7358,
+        "is_within_50": true
+    },
+    {
+        "name": "用心棒 市ヶ谷飯田橋",
+        "genres": [
+            "ramen"
+        ],
+        "lat": 35.6928,
+        "lng": 139.7355,
+        "is_within_50": false
+    },
+    {
+        "name": "横浜家系ラーメン てつ家 市ヶ谷",
+        "genres": [
+            "ramen"
+        ],
+        "lat": 35.6955,
+        "lng": 139.7388,
+        "is_within_50": true
+    },
+    {
+        "name": "炭火焼濃厚中華そば 倫道",
+        "genres": [
+            "ramen",
+            "chinese"
+        ],
+        "lat": 35.6948,
+        "lng": 139.7380,
+        "is_within_50": true
+    },
+    {
+        "name": "ハレ＆ケ",
+        "genres": [
+            "ramen"
+        ],
+        "lat": 35.6942,
+        "lng": 139.7368,
+        "is_within_50": true
+    },
+    {
+        "name": "炭火焼干物定食しんぱち食堂 市ヶ谷店",
+        "genres": [
+            "other"
+        ],
+        "lat": 35.6935,
+        "lng": 139.7362,
+        "is_within_50": true
+    },
+    {
+        "name": "肴と酒 晴々 市ヶ谷本店",
+        "genres": [
+            "izakaya"
+        ],
+        "lat": 35.6950,
+        "lng": 139.7385,
+        "is_within_50": false
+    },
+    {
+        "name": "九州酒場 げん次",
+        "genres": [
+            "izakaya"
+        ],
+        "lat": 35.6943,
+        "lng": 139.7370,
+        "is_within_50": false
+    },
+    {
+        "name": "大海の食卓 市ヶ谷",
+        "genres": [
+            "izakaya"
+        ],
+        "lat": 35.6955,
+        "lng": 139.7392,
+        "is_within_50": true
+    },
+    {
+        "name": "さかじ総本店 市ヶ谷",
+        "genres": [
+            "izakaya"
+        ],
+        "lat": 35.6940,
+        "lng": 139.7373,
+        "is_within_50": true
+    },
+    {
+        "name": "居酒屋とりせん 市ヶ谷店",
+        "genres": [
+            "izakaya"
+        ],
+        "lat": 35.6945,
+        "lng": 139.7378,
+        "is_within_50": false
+    },
+    {
+        "name": "PASSAGE COFFEE ICHIGAYA",
+        "genres": [
+            "cafe"
+        ],
+        "lat": 35.6960,
+        "lng": 139.7395,
+        "is_within_50": true
+    },
+    {
+        "name": "つながるCafe",
+        "genres": [
+            "cafe"
+        ],
+        "lat": 35.6946,
+        "lng": 139.7376,
+        "is_within_50": true
+    },
+    {
+        "name": "問いカフェ",
+        "genres": [
+            "cafe"
+        ],
+        "lat": 35.6938,
+        "lng": 139.7365,
+        "is_within_50": true
+    },
+    {
+        "name": "Servo Coffee Ichigaya",
+        "genres": [
+            "cafe"
+        ],
+        "lat": 35.6952,
+        "lng": 139.7382,
+        "is_within_50": true
+    },
+    {
+        "name": "選書専門書店 チャイと選書 Chapters bookstore",
+        "genres": [
+            "cafe"
+        ],
+        "lat": 35.6941,
+        "lng": 139.7369,
+        "is_within_50": true
+    }
+]
