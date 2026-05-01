@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iTL Lunch Navigator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>iTL Lunch Optimizer😘</h1>
+    </header>
+
+    <main>
+        <div id="map"></div>
+
+        <div class="container">
+            <section id="filter-section">
+                <select id="genre-filter">
+                    <option value="all">全ジャンル</option>
+                    <option value="ramen">ラーメン</option>
+                    <option value="izakaya">居酒屋</option>
+                    <option value="cafe">カフェ</option>
+                    <option value="chinese">中華</option>
+                    <option value="italian">イタリアン</option>
+                    <option value="other">その他</option>
+                </select>
+                <label>
+                    <input type="checkbox" id="within-50-only"> 50分以内のみ表示
+                </label>
+            </section>
+
+            <section id="restaurant-list">
+            </section>
+
+            <hr>
+            <section id="submission-form">
+                <h3>レストラン情報の追加</h3>
+                <form id="restaurant-form">
+                    <input type="text" id="name" placeholder="店名" required>
+
+                    <p>ジャンル（複数選択可）:</p>
+                    <div id="genre-checkbox-group" class="checkbox-container">
+                        <label><input type="checkbox" name="genre" value="ramen"> ラーメン</label>
+                        <label><input type="checkbox" name="genre" value="chinese"> 中華</label>
+                        <label><input type="checkbox" name="genre" value="italian"> イタリアン</label>
+                        <label><input type="checkbox" name="genre" value="cafe"> カフェ</label>
+                        <label><input type="checkbox" name="genre" value="other"> その他</label>
+                    </div>
+
+                    <label class="toggle-container">
+                        <input type="checkbox" id="is_within_50"> 50分以内で食事が完結するか？
+                    </label>
+                    <button type="submit" id="submit-btn">GitHubへ送信</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBd7gG5ji3ABVMgw0erWLCxfHCzydLVKd4&callback=initMap"
+        async defer></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

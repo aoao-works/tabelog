@@ -1,0 +1,80 @@
+:root {
+    --main-bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --border-color: #dee2e6;
+    --accent-ok: #28a745;
+    --accent-ng: #dc3545;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: var(--main-bg);
+}
+
+#map {
+    height: 350px;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.restaurant-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.badge-ok { background: #e6ffed; color: var(--accent-ok); }
+.badge-ng { background: #ffeef0; color: var(--accent-ng); }
+
+form input, form select, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* チェックボックスのレイアウト調整 */
+.checkbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 15px;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.checkbox-container label {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+/* フォーム共通のwidth:100%設定がチェックボックスに干渉するのを防ぐ */
+.checkbox-container input[type="checkbox"] {
+    width: auto;
+    margin-right: 6px;
+    margin-bottom: 0;
+}
